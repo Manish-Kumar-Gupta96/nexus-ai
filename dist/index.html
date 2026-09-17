@@ -38,6 +38,8 @@
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-semibold">
                     <li class="nav-item"><a class="nexus-nav-link active" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nexus-nav-link" href="models.html">AI Models</a></li>
+                    <li class="nav-item"><a class="nexus-nav-link" href="templates.html">Templates</a></li>
+                    <li class="nav-item"><a class="nexus-nav-link" href="enterprise.html">Enterprise</a></li>
                     <li class="nav-item"><a class="nexus-nav-link" href="pricing.html">Pricing</a></li>
                     <li class="nav-item"><a class="nexus-nav-link" href="docs.html">API Docs</a></li>
                 </ul>
@@ -188,6 +190,107 @@ async def generate_response(query: str, token: str = Depends(OAuth2PasswordBeare
                         <h4 class="fw-bold text-white mb-2">Autonomous AI Agents</h4>
                         <p class="text-white-50 small mb-4">Deploy self-orchestrating agents that browse the web, execute shell commands, query databases, and produce executive reports.</p>
                         <a href="app.html" class="text-success fw-bold text-decoration-none mt-auto">Open Agent Hub <i class="fa-solid fa-arrow-right small"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Model Benchmark Comparison Matrix -->
+    <section class="py-5">
+        <div class="container py-4">
+            <div class="text-center max-w-700 mx-auto mb-5">
+                <span class="badge bg-info text-dark px-3 py-1 rounded-pill fw-bold mb-2">Verified Performance</span>
+                <h2 class="display-6 fw-bold text-white">How NexusAI Outperforms the Industry</h2>
+                <p class="text-white-50">Standardized benchmark scores across HumanEval (Coding), MMLU (Reasoning), and GSM8K (Math).</p>
+            </div>
+
+            <div class="card glass-panel border-0 p-4 table-responsive shadow-lg">
+                <table class="table table-dark table-hover align-middle mb-0">
+                    <thead>
+                        <tr class="text-white-50 small border-bottom border-secondary border-opacity-50">
+                            <th>Model Architecture</th>
+                            <th>MMLU (Reasoning)</th>
+                            <th>HumanEval (Coding)</th>
+                            <th>Context Window</th>
+                            <th>Latency (TTFT)</th>
+                            <th>Cost / 1M Input</th>
+                        </tr>
+                    </thead>
+                    <tbody class="mono-font small">
+                        <tr class="table-primary text-white" style="background: rgba(99, 102, 241, 0.25) !important;">
+                            <td><strong class="text-info"><i class="fa-solid fa-crown text-warning me-1"></i> Nexus-4 Turbo (v4.2)</strong></td>
+                            <td><span class="badge bg-success">91.4%</span></td>
+                            <td><span class="badge bg-success">92.8%</span></td>
+                            <td><strong>2,000,000</strong></td>
+                            <td><span class="text-info">42 ms</span></td>
+                            <td><strong class="text-warning">$2.50</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Nexus-Flash 3.5</strong></td>
+                            <td>88.2%</td>
+                            <td>87.4%</td>
+                            <td>1,000,000</td>
+                            <td><span class="text-success">28 ms</span></td>
+                            <td>$0.15</td>
+                        </tr>
+                        <tr class="text-white-50">
+                            <td>OpenAI GPT-4o</td>
+                            <td>88.7%</td>
+                            <td>90.2%</td>
+                            <td>128,000</td>
+                            <td>110 ms</td>
+                            <td>$5.00</td>
+                        </tr>
+                        <tr class="text-white-50">
+                            <td>Claude 3.5 Sonnet</td>
+                            <td>88.3%</td>
+                            <td>92.0%</td>
+                            <td>200,000</td>
+                            <td>135 ms</td>
+                            <td>$3.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Token ROI & Cost Calculator -->
+    <section class="py-5" style="background: rgba(15, 23, 42, 0.4);">
+        <div class="container py-4">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <span class="badge bg-success px-3 py-1 rounded-pill mb-2">Cost Efficiency</span>
+                    <h2 class="display-6 fw-bold text-white mb-3">Calculate Your Monthly AI Cost Savings</h2>
+                    <p class="text-white-50">Drag the slider to adjust your estimated monthly token volume and see how much you save using NexusAI over legacy APIs.</p>
+                    
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between text-white fw-bold mb-2">
+                            <span>Monthly Tokens:</span>
+                            <span id="sliderValDisplay" class="text-info mono-font fs-5">10,000,000 Tokens</span>
+                        </div>
+                        <input type="range" class="form-range" id="tokenRangeSlider" min="1" max="50" value="10" oninput="updateRoiCalc(this.value)">
+                    </div>
+
+                    <div class="d-flex gap-4">
+                        <div>
+                            <small class="text-white-50 d-block">NexusAI Cost / mo:</small>
+                            <h3 class="fw-bold text-success mb-0" id="nexusCostDisplay">$25.00</h3>
+                        </div>
+                        <div class="border-start border-secondary ps-4">
+                            <small class="text-white-50 d-block">Competitor Cost / mo:</small>
+                            <h3 class="fw-bold text-danger text-decoration-line-through mb-0" id="competitorCostDisplay">$60.00</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card glass-panel border-0 p-4 p-md-5 text-center">
+                        <span class="badge bg-success bg-opacity-25 text-success px-3 py-1 rounded-pill mb-3" style="width: fit-content; margin: 0 auto;">Estimated Annual Savings</span>
+                        <h1 class="display-4 fw-extrabold gradient-text-gold mb-2" id="annualSavingsDisplay">$420.00 / yr</h1>
+                        <p class="text-white-50 small mb-4">Saved in raw GPU compute and API token billing with NexusAI high-density KV caching.</p>
+                        <a href="app.html" class="btn btn-nexus-primary btn-lg rounded-pill px-5">Claim Free Developer Credits</a>
                     </div>
                 </div>
             </div>
