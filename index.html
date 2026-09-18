@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusAI — Next-Gen Multimodal AI Studio &amp; Cloud Intelligence Platform</title>
+    <meta name="description" content="NexusAI delivers state-of-the-art multimodal AI generation: LLM Code Assistants, Ultra-Photoreal Image Synthesis, Neural Voice, and Enterprise Cloud Orchestration.">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="py-2 text-center small border-bottom border-secondary border-opacity-25" style="background: rgba(15, 23, 42, 0.85);">
+        <div class="container d-flex justify-content-center align-items-center gap-2 flex-wrap">
+            <span class="badge bg-primary px-3 py-1 rounded-pill fw-bold">v4.0 Omni Release</span>
+            <span class="text-white-50">Nexus-4 Turbo with 2M Token Context is now live for all developers!</span>
+            <a href="app.html" class="text-info fw-bold text-decoration-none ms-2">Launch Studio <i class="fa-solid fa-arrow-right small"></i></a>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="navbar navbar-expand-lg sticky-top" style="background: rgba(7, 9, 14, 0.9); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+        <div class="container py-2">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #6366f1, #d946ef); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 0 15px rgba(217, 70, 239, 0.5);">
+                    <i class="fa-solid fa-brain text-white"></i>
+                </div>
+                <span class="fw-bold fs-4 brand-font text-white">NEXUS<span class="gradient-text-cyan-violet">.AI</span></span>
+            </a>
+            <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#nexusNav">
+                <i class="fa-solid fa-bars fs-3 text-info"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="nexusNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-semibold">
+                    <li class="nav-item"><a class="nexus-nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nexus-nav-link" href="models.html">AI Models</a></li>
+                    <li class="nav-item"><a class="nexus-nav-link" href="templates.html">Templates</a></li>
+                    <li class="nav-item"><a class="nexus-nav-link" href="enterprise.html">Enterprise</a></li>
+                    <li class="nav-item"><a class="nexus-nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nexus-nav-link" href="docs.html">API Docs</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="login.html" class="btn-nexus-secondary btn-sm px-4">Sign In</a>
+                    <a href="app.html" class="btn-nexus-primary btn-sm px-4">
+                        <i class="fa-solid fa-bolt me-2"></i> Launch Studio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-5 text-center position-relative overflow-hidden" style="padding-top: 80px !important; padding-bottom: 80px !important;">
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-4 border border-info border-opacity-25" style="background: rgba(6, 182, 212, 0.08);">
+                <span class="badge bg-info text-dark rounded-pill">NEW</span>
+                <span class="small text-info fw-bold"><i class="fa-solid fa-microchip me-1"></i> Multimodal AI Reasoning Engine</span>
+            </div>
+            
+            <h1 class="display-3 fw-extrabold text-white max-w-900 mx-auto mb-4" style="line-height: 1.15;">
+                Orchestrate Intelligence. <br>
+                <span class="gradient-text-cyan-violet">Build The Future with Nexus AI.</span>
+            </h1>
+            
+            <p class="lead text-white-50 max-w-700 mx-auto mb-5" style="font-size: 1.25rem;">
+                Unified developer platform for high-speed LLM reasoning, photoreal image synthesis, ultra-low latency voice cloning, and enterprise neural workflow automation.
+            </p>
+
+            <div class="d-flex justify-content-center gap-3 flex-wrap mb-5">
+                <a href="app.html" class="btn-nexus-primary btn-lg px-5 py-3 fs-6">
+                    <i class="fa-solid fa-wand-magic-sparkles me-2"></i> Start Building Free
+                </a>
+                <a href="docs.html" class="btn-nexus-secondary btn-lg px-5 py-3 fs-6">
+                    <i class="fa-solid fa-terminal me-2"></i> View API Docs
+                </a>
+            </div>
+
+            <!-- Live Interactive AI Playground Card -->
+            <div class="card glass-panel border-0 max-w-900 mx-auto p-4 p-md-5 text-start shadow-lg">
+                <div class="d-flex justify-content-between align-items-center border-bottom border-secondary border-opacity-25 pb-3 mb-3 flex-wrap gap-2">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="badge bg-success rounded-circle p-1"></span>
+                        <small class="text-white-50 fw-bold mono-font">MODEL: NEXUS-4-OMNI-TURBO (LIVE INFERENCE)</small>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-sm btn-outline-secondary rounded-pill text-white-50" onclick="setPlaygroundPrompt('code')">Python Fast API</button>
+                        <button class="btn btn-sm btn-outline-secondary rounded-pill text-white-50" onclick="setPlaygroundPrompt('image')">Cyberpunk Art</button>
+                        <button class="btn btn-sm btn-outline-secondary rounded-pill text-white-50" onclick="setPlaygroundPrompt('finance')">Crypto Sentiment</button>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="small text-white-50 fw-semibold mb-2">Input Prompt / Instructions:</label>
+                    <div class="input-group">
+                        <textarea id="playgroundInput" class="form-control bg-dark text-white border-secondary" rows="2" placeholder="Ask NexusAI to write high performance async code, generate visual art, or analyze data...">Write a Python FastAPI service with Redis caching and JWT token authentication.</textarea>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <small class="text-white-50"><i class="fa-solid fa-gauge me-1 text-info"></i> Latency: <strong>48ms</strong> &nbsp;|&nbsp; Context: <strong>2,000,000 Tokens</strong></small>
+                    <button class="btn btn-nexus-primary btn-sm px-4" id="runAiBtn" onclick="runPlaygroundSimulation()">
+                        <i class="fa-solid fa-play me-1"></i> Generate Output
+                    </button>
+                </div>
+
+                <!-- Output Box -->
+                <div class="p-3 rounded-3 mono-font small position-relative" style="background: #04060a; border: 1px solid rgba(255,255,255,0.1); min-height: 140px; color: #a5b4fc;">
+                    <div class="d-flex justify-content-between text-white-50 small mb-2 border-bottom border-dark pb-1">
+                        <span><i class="fa-solid fa-check text-success me-1"></i> Output Stream (Tokens/sec: 142.8)</span>
+                        <button class="btn btn-link text-white-50 p-0 text-decoration-none small" onclick="navigator.clipboard.writeText(document.getElementById('aiOutputBox').innerText); alert('Code copied to clipboard!');"><i class="fa-solid fa-copy me-1"></i> Copy</button>
+                    </div>
+                    <pre id="aiOutputBox" class="mb-0" style="white-space: pre-wrap; color: #38bdf8;">from fastapi import FastAPI, Depends, HTTPException, status
+from fastapi.security import OAuth2PasswordBearer
+import redis.asyncio as redis
+
+app = FastAPI(title="NexusAI Fast Core")
+cache = redis.from_url("redis://localhost:6379")
+
+@app.get("/api/v1/inference")
+async def generate_response(query: str, token: str = Depends(OAuth2PasswordBearer(tokenUrl="token"))):
+    cached_result = await cache.get(f"query:{query}")
+    if cached_result:
+        return {"source": "cache", "payload": cached_result.decode("utf-8")}
+    
+    # Process through Nexus Neural Engine...
+    result = {"status": "success", "tokens": 128, "model": "nexus-4-omni"}
+    await cache.setex(f"query:{query}", 3600, str(result))
+    return result</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Multimodal Capabilities -->
+    <section class="py-5" style="background: rgba(15, 23, 42, 0.4);">
+        <div class="container py-4">
+            <div class="text-center max-w-700 mx-auto mb-5">
+                <span class="badge bg-primary px-3 py-1 rounded-pill mb-2">Multimodal Powerhouse</span>
+                <h2 class="display-6 fw-bold text-white">One Unified AI Stack for Everything</h2>
+                <p class="text-white-50">State-of-the-art generative primitives accessible via UI Studio or single-line REST APIs.</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Cap 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 glass-panel border-0 p-4">
+                        <div class="feature-icon-box bg-info bg-opacity-10 text-info">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h4 class="fw-bold text-white mb-2">Neural Code Synthesis</h4>
+                        <p class="text-white-50 small mb-4">Complete full-stack features, refactor legacy codebases, and optimize SQL queries with deep architectural understanding.</p>
+                        <a href="app.html" class="text-info fw-bold text-decoration-none mt-auto">Open Code Studio <i class="fa-solid fa-arrow-right small"></i></a>
+                    </div>
+                </div>
+
+                <!-- Cap 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 glass-panel border-0 p-4">
+                        <div class="feature-icon-box bg-primary bg-opacity-10 text-primary">
+                            <i class="fa-solid fa-image"></i>
+                        </div>
+                        <h4 class="fw-bold text-white mb-2">Photoreal Image Studio</h4>
+                        <p class="text-white-50 small mb-4">Generate 4K resolution cinematic visuals, marketing mockups, vector logos, and UI concept art with sub-second diffusion.</p>
+                        <a href="app.html" class="text-primary fw-bold text-decoration-none mt-auto">Open Image Studio <i class="fa-solid fa-arrow-right small"></i></a>
+                    </div>
+                </div>
+
+                <!-- Cap 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 glass-panel border-0 p-4">
+                        <div class="feature-icon-box bg-warning bg-opacity-10 text-warning">
+                            <i class="fa-solid fa-waveform-lines"></i>
+                        </div>
+                        <h4 class="fw-bold text-white mb-2">Neural Voice Synthesis</h4>
+                        <p class="text-white-50 small mb-4">Human-indistinguishable text-to-speech across 85+ languages with emotion modulation and instant zero-shot voice cloning.</p>
+                        <a href="app.html" class="text-warning fw-bold text-decoration-none mt-auto">Open Audio Studio <i class="fa-solid fa-arrow-right small"></i></a>
+                    </div>
+                </div>
+
+                <!-- Cap 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 glass-panel border-0 p-4">
+                        <div class="feature-icon-box bg-success bg-opacity-10 text-success">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <h4 class="fw-bold text-white mb-2">Autonomous AI Agents</h4>
+                        <p class="text-white-50 small mb-4">Deploy self-orchestrating agents that browse the web, execute shell commands, query databases, and produce executive reports.</p>
+                        <a href="app.html" class="text-success fw-bold text-decoration-none mt-auto">Open Agent Hub <i class="fa-solid fa-arrow-right small"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Model Benchmark Comparison Matrix -->
+    <section class="py-5">
+        <div class="container py-4">
+            <div class="text-center max-w-700 mx-auto mb-5">
+                <span class="badge bg-info text-dark px-3 py-1 rounded-pill fw-bold mb-2">Verified Performance</span>
+                <h2 class="display-6 fw-bold text-white">How NexusAI Outperforms the Industry</h2>
+                <p class="text-white-50">Standardized benchmark scores across HumanEval (Coding), MMLU (Reasoning), and GSM8K (Math).</p>
+            </div>
+
+            <div class="card glass-panel border-0 p-4 table-responsive shadow-lg">
+                <table class="table table-dark table-hover align-middle mb-0">
+                    <thead>
+                        <tr class="text-white-50 small border-bottom border-secondary border-opacity-50">
+                            <th>Model Architecture</th>
+                            <th>MMLU (Reasoning)</th>
+                            <th>HumanEval (Coding)</th>
+                            <th>Context Window</th>
+                            <th>Latency (TTFT)</th>
+                            <th>Cost / 1M Input</th>
+                        </tr>
+                    </thead>
+                    <tbody class="mono-font small">
+                        <tr class="table-primary text-white" style="background: rgba(99, 102, 241, 0.25) !important;">
+                            <td><strong class="text-info"><i class="fa-solid fa-crown text-warning me-1"></i> Nexus-4 Turbo (v4.2)</strong></td>
+                            <td><span class="badge bg-success">91.4%</span></td>
+                            <td><span class="badge bg-success">92.8%</span></td>
+                            <td><strong>2,000,000</strong></td>
+                            <td><span class="text-info">42 ms</span></td>
+                            <td><strong class="text-warning">$2.50</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Nexus-Flash 3.5</strong></td>
+                            <td>88.2%</td>
+                            <td>87.4%</td>
+                            <td>1,000,000</td>
+                            <td><span class="text-success">28 ms</span></td>
+                            <td>$0.15</td>
+                        </tr>
+                        <tr class="text-white-50">
+                            <td>OpenAI GPT-4o</td>
+                            <td>88.7%</td>
+                            <td>90.2%</td>
+                            <td>128,000</td>
+                            <td>110 ms</td>
+                            <td>$5.00</td>
+                        </tr>
+                        <tr class="text-white-50">
+                            <td>Claude 3.5 Sonnet</td>
+                            <td>88.3%</td>
+                            <td>92.0%</td>
+                            <td>200,000</td>
+                            <td>135 ms</td>
+                            <td>$3.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Token ROI & Cost Calculator -->
+    <section class="py-5" style="background: rgba(15, 23, 42, 0.4);">
+        <div class="container py-4">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <span class="badge bg-success px-3 py-1 rounded-pill mb-2">Cost Efficiency</span>
+                    <h2 class="display-6 fw-bold text-white mb-3">Calculate Your Monthly AI Cost Savings</h2>
+                    <p class="text-white-50">Drag the slider to adjust your estimated monthly token volume and see how much you save using NexusAI over legacy APIs.</p>
+                    
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between text-white fw-bold mb-2">
+                            <span>Monthly Tokens:</span>
+                            <span id="sliderValDisplay" class="text-info mono-font fs-5">10,000,000 Tokens</span>
+                        </div>
+                        <input type="range" class="form-range" id="tokenRangeSlider" min="1" max="50" value="10" oninput="updateRoiCalc(this.value)">
+                    </div>
+
+                    <div class="d-flex gap-4">
+                        <div>
+                            <small class="text-white-50 d-block">NexusAI Cost / mo:</small>
+                            <h3 class="fw-bold text-success mb-0" id="nexusCostDisplay">$25.00</h3>
+                        </div>
+                        <div class="border-start border-secondary ps-4">
+                            <small class="text-white-50 d-block">Competitor Cost / mo:</small>
+                            <h3 class="fw-bold text-danger text-decoration-line-through mb-0" id="competitorCostDisplay">$60.00</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card glass-panel border-0 p-4 p-md-5 text-center">
+                        <span class="badge bg-success bg-opacity-25 text-success px-3 py-1 rounded-pill mb-3" style="width: fit-content; margin: 0 auto;">Estimated Annual Savings</span>
+                        <h1 class="display-4 fw-extrabold gradient-text-gold mb-2" id="annualSavingsDisplay">$420.00 / yr</h1>
+                        <p class="text-white-50 small mb-4">Saved in raw GPU compute and API token billing with NexusAI high-density KV caching.</p>
+                        <a href="app.html" class="btn btn-nexus-primary btn-lg rounded-pill px-5">Claim Free Developer Credits</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Snapshot -->
+    <section class="py-5">
+        <div class="container py-4">
+            <div class="text-center max-w-700 mx-auto mb-5">
+                <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold mb-2">Predictable Pricing</span>
+                <h2 class="display-6 fw-bold text-white">Simple, Transparent Token Plans</h2>
+                <p class="text-white-50">Start building for free. Scale seamlessly with zero rate-limit constraints.</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 glass-panel border-0 p-4">
+                        <span class="badge bg-secondary mb-3" style="width: fit-content;">Developer Free</span>
+                        <h2 class="fw-bold text-white mb-0">$0 <span class="small fs-6 text-white-50">/ month</span></h2>
+                        <p class="text-white-50 small my-3">Ideal for prototyping and exploring all models.</p>
+                        <ul class="list-unstyled small text-white-50 mb-4">
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> 50,000 Free Monthly Tokens</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> Access to Nexus-4 Turbo &amp; Vision</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> 100 Image Generations / mo</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> Community Support</li>
+                        </ul>
+                        <a href="app.html" class="btn btn-nexus-secondary w-100 rounded-pill mt-auto">Get Started Free</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 glass-panel border-0 p-4 position-relative" style="border: 2px solid #8b5cf6 !important; background: rgba(30, 27, 75, 0.4);">
+                        <span class="badge bg-primary position-absolute top-0 end-0 m-3 px-3 py-2 rounded-pill">Most Popular</span>
+                        <span class="badge bg-primary mb-3" style="width: fit-content;">Pro Builder</span>
+                        <h2 class="fw-bold text-white mb-0">$29 <span class="small fs-6 text-white-50">/ month</span></h2>
+                        <p class="text-white-50 small my-3">For creators, researchers, and scaling apps.</p>
+                        <ul class="list-unstyled small text-white-50 mb-4">
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> 5,000,000 High-Speed Tokens</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> 2M Context Window Enabled</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> 2,000 4K Photoreal Image Gens</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> Dedicated Fast GPU Compute</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> Unlimited Custom API Keys</li>
+                        </ul>
+                        <a href="pricing.html" class="btn btn-nexus-primary w-100 rounded-pill mt-auto">Upgrade to Pro</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 border-top border-secondary border-opacity-25" style="background: #04060a;">
+        <div class="container text-center">
+            <div class="d-flex justify-content-center align-items-center gap-2 mb-3">
+                <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #6366f1, #d946ef); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px;">
+                    <i class="fa-solid fa-brain text-white"></i>
+                </div>
+                <h5 class="text-white fw-bold mb-0">NEXUS AI PLATFORM</h5>
+            </div>
+            <p class="small text-white-50 mb-3">Next-Generation Multimodal AI Platform for Developers &amp; Enterprises.</p>
+            <div class="small text-secondary">
+                © 2026 <strong>NexusAI</strong>. Built &amp; Architected with ❤️ by <strong><a href="https://github.com/Manish-Kumar-Gupta96" class="text-info text-decoration-none">Manish Kumar Gupta</a></strong>.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const samplePrompts = {
+            code: `Write a Python FastAPI service with Redis caching and JWT token authentication.`,
+            image: `Cyberpunk futuristic Tokyo street in rainy night, neon cyan reflections, ultra photoreal 8K octane render.`,
+            finance: `Analyze recent Ethereum layer-2 transactions throughput metrics and predict gas trends for next epoch.`
+        };
+
+        const sampleOutputs = {
+            code: `from fastapi import FastAPI, Depends, HTTPException, status
+from fastapi.security import OAuth2PasswordBearer
+import redis.asyncio as redis
+
+app = FastAPI(title="NexusAI Fast Core")
+cache = redis.from_url("redis://localhost:6379")
+
+@app.get("/api/v1/inference")
+async def generate_response(query: str, token: str = Depends(OAuth2PasswordBearer(tokenUrl="token"))):
+    cached_result = await cache.get(f"query:{query}")
+    if cached_result:
+        return {"source": "cache", "payload": cached_result.decode("utf-8")}
+    
+    # Process through Nexus Neural Engine...
+    result = {"status": "success", "tokens": 128, "model": "nexus-4-omni"}
+    await cache.setex(f"query:{query}", 3600, str(result))
+    return result`,
+            image: `[Nexus Diffusion Engine v4.2]
+Generated Image Tensor: 3840x2160 (16-bit HDR)
+Sampling Steps: 30 | Guidance Scale (CFG): 7.5 | Sampler: DPM++ 2M Karras
+Seed: 9841289410 | VRAM Allocated: 4.8 GB
+Status: High-definition photoreal prompt synthesis complete in 0.84s.`,
+            finance: `[Nexus Financial Intelligence Report]
+1. Arbitrum & Optimism combined TPS: 142.6 TPS (+18.4% WoW).
+2. Base network gas consumption: 0.0012 Gwei average.
+3. 24H Liquidity Inflow: +$420M across DeFi staking vaults.
+Conclusion: Gas fees projected to remain sub-1 Gwei for the next 72 hours.`
+        };
+
+        function setPlaygroundPrompt(type) {
+            document.getElementById('playgroundInput').value = samplePrompts[type];
+            document.getElementById('aiOutputBox').innerText = sampleOutputs[type];
+        }
+
+        function runPlaygroundSimulation() {
+            const btn = document.getElementById('runAiBtn');
+            const box = document.getElementById('aiOutputBox');
+            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin me-1"></i> Inferencing...`;
+            box.innerText = "Connecting to Neural Core...\nStreaming response tokens...";
+            setTimeout(() => {
+                btn.innerHTML = `<i class="fa-solid fa-play me-1"></i> Generate Output`;
+                box.innerText = `[Nexus-4-Omni Response Generated in 0.32s]\n\n` + 
+`Execution Result for: "${document.getElementById('playgroundInput').value}"\n\n` + 
+`{\n  "status": "success",\n  "tokens_generated": 348,\n  "inference_latency_ms": 42.1,\n  "confidence_score": 0.998,\n  "model": "nexus-4-turbo-v4"\n}`;
+            }, 500);
+        }
+    </script>
+</body>
+</html>

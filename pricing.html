@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparent Pricing &amp; Elastic Token Calculator | NexusAI</title>
+    <meta name="description" content="Flexible, pay-as-you-go pricing for developers, startups, and enterprises. Calculate exact costs per token with zero hidden fees.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <nav class="navbar navbar-expand-lg sticky-top" style="background: rgba(7, 9, 14, 0.9); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+        <div class="container py-2">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #6366f1, #d946ef); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+                    <i class="fa-solid fa-brain text-white"></i>
+                </div>
+                <span class="fw-bold fs-4 brand-font text-white">NEXUS<span class="gradient-text-cyan-violet">.AI</span></span>
+            </a>
+            <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#nexusNav">
+                <i class="fa-solid fa-bars fs-3 text-info"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="nexusNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-semibold">
+                    <li class="nav-item"><a class="nexus-nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nexus-nav-link" href="models.html">AI Models</a></li>
+                    <li class="nav-item"><a class="nexus-nav-link" href="templates.html">Templates</a></li>
+                    <li class="nav-item"><a class="nexus-nav-link" href="enterprise.html">Enterprise</a></li>
+                    <li class="nav-item"><a class="nexus-nav-link active" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nexus-nav-link" href="docs.html">API Docs</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="login.html" class="btn-nexus-secondary btn-sm px-4">Sign In</a>
+                    <a href="app.html" class="btn-nexus-primary btn-sm px-4"><i class="fa-solid fa-bolt me-2"></i> Launch Studio</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Banner -->
+    <section class="py-5 text-center position-relative overflow-hidden" style="background: radial-gradient(circle at 50% 30%, rgba(99, 102, 241, 0.2), transparent 70%);">
+        <div class="container py-4 position-relative" style="z-index: 2;">
+            <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold mb-3">Predictable &amp; Elastic Cost</span>
+            <h1 class="display-4 fw-bold text-white mb-3">Simple, Transparent Pricing</h1>
+            <p class="lead text-white-50 max-w-750 mx-auto">Pay strictly for the neural tokens and compute seconds you consume. Scale from hobby prototype to 100M+ requests seamlessly.</p>
+        </div>
+    </section>
+
+    <!-- Pricing Cards Grid -->
+    <section class="py-4">
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                <!-- Free Tier -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 glass-panel border-0 p-4 d-flex flex-column">
+                        <span class="badge bg-secondary mb-3" style="width: fit-content;">Starter Tier</span>
+                        <h2 class="fw-bold text-white mb-0">$0 <span class="small fs-6 text-white-50">/ month</span></h2>
+                        <p class="text-white-50 small my-3">Ideal for developers experimenting, prototyping, and exploring multimodal APIs.</p>
+                        <ul class="list-unstyled small text-white-50 mb-4 flex-grow-1">
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> <strong>50,000</strong> Free Monthly Tokens</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> Access to Nexus-4 Turbo &amp; Flash</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> 100 4K AI Image Generations</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> 1 Active API Secret Key</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> Community Discord Support</li>
+                        </ul>
+                        <a href="app.html" class="btn btn-nexus-secondary w-100 rounded-pill mt-auto">Start Free Now</a>
+                    </div>
+                </div>
+
+                <!-- Pro Tier (Highlighted) -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 glass-panel border-0 p-4 position-relative d-flex flex-column" style="border: 2px solid #8b5cf6 !important; background: rgba(30, 27, 75, 0.55); box-shadow: 0 0 35px rgba(139, 92, 246, 0.25);">
+                        <span class="badge bg-primary position-absolute top-0 end-0 m-3 px-3 py-2 rounded-pill">Most Popular</span>
+                        <span class="badge bg-primary mb-3" style="width: fit-content;">Pro Developer &amp; Teams</span>
+                        <h2 class="fw-bold text-white mb-0">$29 <span class="small fs-6 text-white-50">/ month</span></h2>
+                        <p class="text-white-50 small my-3">Designed for growing startups, product teams, and high-frequency automated agents.</p>
+                        <ul class="list-unstyled small text-white-50 mb-4 flex-grow-1">
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> <strong>5,000,000 Tokens</strong> Included / mo</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> Full <strong>2,000,000 Context Window</strong></li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> 2,500 Photoreal 4K Image Credits</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> Zero Rate-Limit Throttling</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> Priority GPU Cluster Routing</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> Unlimited Team API Keys</li>
+                        </ul>
+                        <a href="login.html" class="btn btn-nexus-primary w-100 rounded-pill mt-auto">Upgrade to Pro</a>
+                    </div>
+                </div>
+
+                <!-- Enterprise Tier -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 glass-panel border-0 p-4 d-flex flex-column">
+                        <span class="badge bg-info text-dark mb-3" style="width: fit-content;">Enterprise Scale</span>
+                        <h2 class="fw-bold text-white mb-0">$299 <span class="small fs-6 text-white-50">/ month</span></h2>
+                        <p class="text-white-50 small my-3">For enterprise mission-critical apps requiring private VPCs and HIPAA compliance.</p>
+                        <ul class="list-unstyled small text-white-50 mb-4 flex-grow-1">
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> <strong>100,000,000+ Scalable Tokens</strong></li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> Custom Model Fine-Tuning LoRA Adapters</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> <strong>99.99% Guaranteed SLA Uptime</strong></li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> Private Dedicated H100 GPU Clusters</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> Dedicated 24/7 Solutions Engineer</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> SOC2 Type II &amp; HIPAA BAA Signed</li>
+                        </ul>
+                        <a href="enterprise.html" class="btn btn-nexus-secondary w-100 rounded-pill mt-auto">Explore Enterprise</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Interactive Token ROI Slider -->
+            <div class="my-5 glass-panel p-4 p-md-5" style="border: 1px solid rgba(139, 92, 246, 0.3);">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-7">
+                        <span class="badge bg-primary bg-opacity-25 text-info border border-info border-opacity-50 mb-2">Interactive Usage Modeler</span>
+                        <h3 class="fw-bold text-white mb-2">Simulate Your Monthly Token Cost</h3>
+                        <p class="text-white-50 small mb-4">Adjust the slider below to see projected savings and total pricing based on your team's monthly token volume.</p>
+                        
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between text-white fw-bold mb-2">
+                                <span>Monthly Volume:</span>
+                                <span id="volDisplay" class="text-info fs-5">10,000,000 Tokens</span>
+                            </div>
+                            <input type="range" class="form-range" id="priceVolumeRange" min="1" max="100" step="1" value="10">
+                            <div class="d-flex justify-content-between text-white-50 small">
+                                <span>1 Million</span>
+                                <span>50 Million</span>
+                                <span>100 Million</span>
+                            </div>
+                        </div>
+
+                        <div class="row g-2 text-white-50 small">
+                            <div class="col-6"><i class="fa-solid fa-check text-success me-1"></i> Prompt Caching: 50% discount</div>
+                            <div class="col-6"><i class="fa-solid fa-check text-success me-1"></i> Batch API: 50% extra off</div>
+                            <div class="col-6"><i class="fa-solid fa-check text-success me-1"></i> No cold starts or idle fees</div>
+                            <div class="col-6"><i class="fa-solid fa-check text-success me-1"></i> Pay with Stripe or Wire transfer</div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <div class="p-4 rounded-4" style="background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.08);">
+                            <span class="text-white-50 small d-block mb-1">Estimated Monthly Cost</span>
+                            <div class="d-flex align-items-baseline gap-2 mb-3">
+                                <h2 class="display-5 fw-bold text-success mb-0" id="calculatedPrice">$18.50</h2>
+                                <span class="text-white-50 small">/ mo on Nexus</span>
+                            </div>
+
+                            <div class="p-3 rounded-3 mb-3 small" style="background: rgba(255,255,255,0.03);">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="text-white-50">Competitor Equivalent:</span>
+                                    <span class="text-danger fw-bold" id="compPrice">$85.00</span>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <span class="text-white-50">Your Estimated Savings:</span>
+                                    <span class="text-success fw-bold" id="savedPrice">$66.50 (78%)</span>
+                                </div>
+                            </div>
+
+                            <a href="login.html" class="btn btn-nexus-primary w-100 rounded-pill">Create API Account <i class="fa-solid fa-arrow-right ms-2 small"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Comparison Matrix -->
+            <div class="glass-panel p-4 p-md-5 mb-5">
+                <h3 class="fw-bold text-white mb-4">Detailed Plan Comparison</h3>
+                <div class="table-responsive">
+                    <table class="table table-dark table-hover align-middle mb-0" style="background: transparent;">
+                        <thead>
+                            <tr class="text-white-50 small border-secondary">
+                                <th style="width: 40%;">Feature</th>
+                                <th style="width: 20%;">Free Starter</th>
+                                <th style="width: 20%;">Pro Scale</th>
+                                <th style="width: 20%;">Enterprise</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-white fw-semibold">Nexus-4 Turbo (2M Context)</td>
+                                <td><i class="fa-solid fa-check text-success"></i> Limited</td>
+                                <td class="text-info fw-bold"><i class="fa-solid fa-check text-success"></i> Full Unlocked</td>
+                                <td class="text-success fw-bold"><i class="fa-solid fa-check text-success"></i> Dedicated Pool</td>
+                            </tr>
+                            <tr>
+                                <td class="text-white fw-semibold">Concurrent API Requests</td>
+                                <td>5 RPM</td>
+                                <td class="text-info">500 RPM</td>
+                                <td class="text-success fw-bold">Unlimited RPS</td>
+                            </tr>
+                            <tr>
+                                <td class="text-white fw-semibold">Prompt Caching Optimization</td>
+                                <td><i class="fa-solid fa-xmark text-secondary"></i></td>
+                                <td><i class="fa-solid fa-check text-success"></i> Included</td>
+                                <td><i class="fa-solid fa-check text-success"></i> Global Edge Multi-Region</td>
+                            </tr>
+                            <tr>
+                                <td class="text-white fw-semibold">Private VPC &amp; On-Prem Peering</td>
+                                <td><i class="fa-solid fa-xmark text-secondary"></i></td>
+                                <td><i class="fa-solid fa-xmark text-secondary"></i></td>
+                                <td><i class="fa-solid fa-check text-success"></i> Included (AWS/GCP/Azure)</td>
+                            </tr>
+                            <tr>
+                                <td class="text-white fw-semibold">Support SLA</td>
+                                <td class="text-white-50">Community Discord</td>
+                                <td class="text-info">Email &lt; 4 Hours</td>
+                                <td class="text-success fw-bold">Dedicated Slack &lt; 15 min</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="max-w-800 mx-auto my-5">
+                <h3 class="fw-bold text-white text-center mb-4">Frequently Asked Questions</h3>
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item glass-panel border-0 mb-3 rounded-3 overflow-hidden">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-dark text-white fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                How does token metering and prompt caching work?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-white-50 small bg-black bg-opacity-50">
+                                Tokens are calculated per API request using standard BPE byte-pair encoding. When sending repeating system prompts or massive documents, our automatic KV cache caches tokens across edge nodes, delivering a 50% discount on cached input tokens with instant response times.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item glass-panel border-0 mb-3 rounded-3 overflow-hidden">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-dark text-white fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                Can I switch or cancel plans anytime?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-white-50 small bg-black bg-opacity-50">
+                                Yes! There are zero long-term contracts. You can upgrade, downgrade, or cancel your Pro subscription directly from your developer dashboard at any moment. Unused balance is prorated automatically.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item glass-panel border-0 mb-3 rounded-3 overflow-hidden">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-dark text-white fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                Do you store or train on customer prompts?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-white-50 small bg-black bg-opacity-50">
+                                <strong>Never.</strong> We enforce a strict Zero Data Retention policy. Customer data transmitted via the Nexus API is never used to train or fine-tune public foundation models, ensuring complete confidentiality for proprietary enterprise codebases.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 border-top border-secondary border-opacity-25" style="background: #04060a;">
+        <div class="container text-center">
+            <h5 class="text-white fw-bold mb-1">NEXUS AI PLATFORM</h5>
+            <div class="small text-secondary mb-3">Cost-efficient distributed neural infrastructure for modern engineering teams.</div>
+            <div class="small text-secondary">© 2026 <strong>NexusAI</strong>. Developed by <strong><a href="https://github.com/Manish-Kumar-Gupta96" class="text-info text-decoration-none">Manish Kumar Gupta</a></strong>.</div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const priceRange = document.getElementById('priceVolumeRange');
+        const volDisplay = document.getElementById('volDisplay');
+        const calculatedPrice = document.getElementById('calculatedPrice');
+        const compPrice = document.getElementById('compPrice');
+        const savedPrice = document.getElementById('savedPrice');
+
+        function updatePricing() {
+            const millions = parseInt(priceRange.value);
+            volDisplay.textContent = millions + ',000,000 Tokens';
+
+            const nexusCost = (millions * 1.85);
+            const competitorCost = (millions * 8.50);
+            const savings = competitorCost - nexusCost;
+            const savingsPct = Math.round((savings / competitorCost) * 100);
+
+            calculatedPrice.textContent = '$' + nexusCost.toFixed(2);
+            compPrice.textContent = '$' + competitorCost.toFixed(2);
+            savedPrice.textContent = '$' + savings.toFixed(2) + ' (' + savingsPct + '%)';
+        }
+
+        priceRange.addEventListener('input', updatePricing);
+        updatePricing();
+    </script>
+</body>
+</html>

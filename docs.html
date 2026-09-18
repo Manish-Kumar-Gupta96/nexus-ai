@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Documentation &amp; REST API Reference | NexusAI</title>
+    <meta name="description" content="Complete REST API specifications, SDK libraries in Python, TypeScript, and Go, plus live interactive request tester.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <nav class="navbar navbar-expand-lg sticky-top" style="background: rgba(7, 9, 14, 0.9); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+        <div class="container py-2">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #6366f1, #d946ef); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+                    <i class="fa-solid fa-brain text-white"></i>
+                </div>
+                <span class="fw-bold fs-4 brand-font text-white">NEXUS<span class="gradient-text-cyan-violet">.AI</span></span>
+            </a>
+            <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#nexusNav">
+                <i class="fa-solid fa-bars fs-3 text-info"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="nexusNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-semibold">
+                    <li class="nav-item"><a class="nexus-nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nexus-nav-link" href="models.html">AI Models</a></li>
+                    <li class="nav-item"><a class="nexus-nav-link" href="templates.html">Templates</a></li>
+                    <li class="nav-item"><a class="nexus-nav-link" href="enterprise.html">Enterprise</a></li>
+                    <li class="nav-item"><a class="nexus-nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nexus-nav-link active" href="docs.html">API Docs</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="login.html" class="btn-nexus-secondary btn-sm px-4">Sign In</a>
+                    <a href="app.html" class="btn-nexus-primary btn-sm px-4"><i class="fa-solid fa-bolt me-2"></i> Launch Studio</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Banner -->
+    <section class="py-5 text-center position-relative overflow-hidden" style="background: radial-gradient(circle at 50% 30%, rgba(6, 182, 212, 0.2), transparent 70%);">
+        <div class="container py-4 position-relative" style="z-index: 2;">
+            <span class="badge bg-info text-dark px-3 py-1 rounded-pill fw-bold mb-3">v1.4 OpenAPI Specification</span>
+            <h1 class="display-4 fw-bold text-white mb-3">Developer Documentation &amp; SDKs</h1>
+            <p class="lead text-white-50 max-w-750 mx-auto">Build high-throughput multimodal AI agents in Python, Node.js, Go, or standard cURL with OpenAI-compatible endpoint compatibility.</p>
+        </div>
+    </section>
+
+    <!-- Docs Layout -->
+    <div class="container py-4">
+        <div class="row g-4">
+            <!-- Sidebar -->
+            <div class="col-lg-3">
+                <div class="p-3 glass-panel position-sticky" style="top: 100px;">
+                    <h6 class="fw-bold text-white mb-3 text-uppercase small"><i class="fa-solid fa-book text-info me-2"></i> Documentation</h6>
+                    <ul class="list-unstyled small d-flex flex-column gap-2 mb-0">
+                        <li><a href="#quickstart" class="text-info text-decoration-none fw-bold"><i class="fa-solid fa-bolt me-2"></i> Quickstart &amp; Auth</a></li>
+                        <li><a href="#interactive-sandbox" class="text-white text-decoration-none"><i class="fa-solid fa-terminal me-2 text-warning"></i> Interactive API Sandbox</a></li>
+                        <li><a href="#code-sdks" class="text-white-50 text-decoration-none"><i class="fa-solid fa-code me-2"></i> Multi-Language SDKs</a></li>
+                        <li><a href="#error-handling" class="text-white-50 text-decoration-none"><i class="fa-solid fa-triangle-exclamation me-2"></i> Error Codes &amp; Limits</a></li>
+                        <li><a href="#webhooks" class="text-white-50 text-decoration-none"><i class="fa-solid fa-network-wired me-2"></i> Streaming &amp; Webhooks</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Documentation Content -->
+            <div class="col-lg-9">
+
+                <!-- Section 1: Quickstart & Auth -->
+                <div id="quickstart" class="glass-panel p-4 p-md-5 mb-4">
+                    <h3 class="fw-bold text-white mb-2">⚡ Authentication</h3>
+                    <p class="text-white-50 small mb-4">The Nexus API uses API secret keys to authenticate requests. Retrieve your key from the <a href="app.html" class="text-info">Nexus Developer Studio</a>.</p>
+                    
+                    <div class="p-3 rounded-3 mono-font small mb-3" style="background: #04060a; border: 1px solid rgba(255,255,255,0.1);">
+                        <span class="text-secondary d-block mb-1"># HTTP Request Header:</span>
+                        <code class="text-warning">Authorization: Bearer nx_live_9f83829ad8471e9a7e8b</code>
+                    </div>
+                </div>
+
+                <!-- Section 2: Live Interactive API Sandbox -->
+                <div id="interactive-sandbox" class="glass-panel p-4 p-md-5 mb-4 position-relative" style="border: 1px solid rgba(6, 182, 212, 0.4);">
+                    <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                        <div>
+                            <span class="badge bg-info text-dark mb-1">Live Simulator</span>
+                            <h3 class="fw-bold text-white mb-0">Interactive API Playground Sandbox</h3>
+                        </div>
+                        <button id="sendSandboxBtn" class="btn btn-nexus-primary btn-sm px-4 rounded-pill">
+                            <i class="fa-solid fa-play me-2"></i> Send Test Request
+                        </button>
+                    </div>
+                    <p class="text-white-50 small mb-4">Test our <code>/v1/chat/completions</code> endpoint directly from your browser. Click the button to inspect real-time JSON response streaming.</p>
+
+                    <div class="row g-3">
+                        <div class="col-lg-6">
+                            <div class="p-3 rounded-3 h-100 mono-font small" style="background: #04060a; border: 1px solid rgba(255,255,255,0.1);">
+                                <div class="d-flex justify-content-between text-white-50 small mb-2 border-bottom border-secondary border-opacity-25 pb-1">
+                                    <span>POST /v1/chat/completions</span>
+                                    <span class="badge bg-secondary">JSON Payload</span>
+                                </div>
+                                <pre class="text-info mb-0" style="font-size: 13px;">{
+  "model": "nexus-4-turbo",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are Nexus Agent v4."
+    },
+    {
+      "role": "user",
+      "content": "Create an async Rust worker."
+    }
+  ],
+  "temperature": 0.7,
+  "max_tokens": 1024
+}</pre>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="p-3 rounded-3 h-100 mono-font small" style="background: #020408; border: 1px solid rgba(6, 182, 212, 0.2);">
+                                <div class="d-flex justify-content-between text-white-50 small mb-2 border-bottom border-secondary border-opacity-25 pb-1">
+                                    <span>HTTP Response Stream</span>
+                                    <span id="sandboxStatus" class="badge bg-success bg-opacity-25 text-success">200 OK</span>
+                                </div>
+                                <pre id="sandboxOutput" class="text-success mb-0" style="font-size: 12.5px; height: 180px; overflow-y: auto; white-space: pre-wrap;">{
+  "id": "chatcmpl_98a7f1e9",
+  "object": "chat.completion",
+  "created": 1742468400,
+  "model": "nexus-4-turbo",
+  "choices": [{
+    "message": {
+      "role": "assistant",
+      "content": "use tokio::sync::mpsc;\n\n#[tokio::main]\nasync fn main() {\n    let (tx, mut rx) = mpsc::channel(32);\n    tokio::spawn(async move {\n        tx.send(\"Task Processed\").await.unwrap();\n    });\n    while let Some(msg) = rx.recv().await {\n        println!(\"Received: {}\", msg);\n    }\n}"
+    },
+    "finish_reason": "stop"
+  }],
+  "usage": {
+    "prompt_tokens": 24,
+    "completion_tokens": 68,
+    "total_tokens": 92
+  }
+}</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3: Multi-Language Code SDKs -->
+                <div id="code-sdks" class="glass-panel p-4 p-md-5 mb-4">
+                    <h3 class="fw-bold text-white mb-2">💻 Multi-Language SDK Snippets</h3>
+                    <p class="text-white-50 small mb-3">Integrate with your preferred backend framework using our official open-source client libraries.</p>
+
+                    <!-- Language Switcher Tabs -->
+                    <ul class="nav nav-pills mb-3 gap-2" id="sdkTab" role="tablist">
+                        <li class="nav-item"><button class="btn btn-sm btn-outline-light active px-3 rounded-pill" data-bs-toggle="pill" data-bs-target="#tab-curl"><i class="fa-solid fa-terminal me-1"></i> cURL</button></li>
+                        <li class="nav-item"><button class="btn btn-sm btn-outline-light px-3 rounded-pill" data-bs-toggle="pill" data-bs-target="#tab-python"><i class="fa-brands fa-python me-1"></i> Python</button></li>
+                        <li class="nav-item"><button class="btn btn-sm btn-outline-light px-3 rounded-pill" data-bs-toggle="pill" data-bs-target="#tab-node"><i class="fa-brands fa-node-js me-1"></i> TypeScript / Node</button></li>
+                        <li class="nav-item"><button class="btn btn-sm btn-outline-light px-3 rounded-pill" data-bs-toggle="pill" data-bs-target="#tab-go"><i class="fa-brands fa-golang me-1"></i> Go</button></li>
+                    </ul>
+
+                    <div class="tab-content" id="sdkTabContent">
+                        <!-- cURL -->
+                        <div class="tab-pane fade show active" id="tab-curl">
+                            <div class="p-3 rounded-3 mono-font small" style="background: #04060a; border: 1px solid rgba(255,255,255,0.1);">
+                                <pre class="text-info mb-0" style="white-space: pre-wrap;">curl https://api.nexus-ai.dev/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer nx_live_YOUR_API_KEY" \
+  -d '{
+    "model": "nexus-4-turbo",
+    "messages": [
+      {"role": "system", "content": "You are an AI data engineer."},
+      {"role": "user", "content": "Optimize this BigQuery SQL partition query."}
+    ],
+    "temperature": 0.5
+  }'</pre>
+                            </div>
+                        </div>
+
+                        <!-- Python -->
+                        <div class="tab-pane fade" id="tab-python">
+                            <div class="p-3 rounded-3 mono-font small" style="background: #04060a; border: 1px solid rgba(255,255,255,0.1);">
+                                <pre class="text-warning mb-0" style="white-space: pre-wrap;">import nexus
+
+client = nexus.NexusAI(api_key="nx_live_YOUR_API_KEY")
+
+response = client.chat.completions.create(
+    model="nexus-4-turbo",
+    messages=[
+        {"role": "system", "content": "You are a backend architect."},
+        {"role": "user", "content": "Build an event bus in FastAPI with Redis Pub/Sub."}
+    ],
+    stream=True
+)
+
+for chunk in response:
+    print(chunk.choices[0].delta.content or "", end="")</pre>
+                            </div>
+                        </div>
+
+                        <!-- Node / TypeScript -->
+                        <div class="tab-pane fade" id="tab-node">
+                            <div class="p-3 rounded-3 mono-font small" style="background: #04060a; border: 1px solid rgba(255,255,255,0.1);">
+                                <pre class="text-success mb-0" style="white-space: pre-wrap;">import { NexusAI } from '@nexus-ai/sdk';
+
+const client = new NexusAI({ apiKey: process.env.NEXUS_API_KEY });
+
+async function run() {
+  const stream = await client.chat.completions.create({
+    model: 'nexus-4-turbo',
+    messages: [{ role: 'user', content: 'Generate a Next.js 15 Server Action handler' }],
+    stream: true,
+  });
+
+  for await (const chunk of stream) {
+    process.stdout.write(chunk.choices[0]?.delta?.content || '');
+  }
+}
+
+run();</pre>
+                            </div>
+                        </div>
+
+                        <!-- Go -->
+                        <div class="tab-pane fade" id="tab-go">
+                            <div class="p-3 rounded-3 mono-font small" style="background: #04060a; border: 1px solid rgba(255,255,255,0.1);">
+                                <pre class="text-info mb-0" style="white-space: pre-wrap;">package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/nexus-ai/nexus-go"
+)
+
+func main() {
+    client := nexus.NewClient("nx_live_YOUR_API_KEY")
+    resp, err := client.CreateChatCompletion(context.Background(), nexus.ChatRequest{
+        Model: "nexus-4-turbo",
+        Messages: []nexus.Message{{Role: "user", Content: "Explain Goroutines and Mutex locks"}},
+    })
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println(resp.Choices[0].Message.Content)
+}</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 4: Error Handling & Rate Limits -->
+                <div id="error-handling" class="glass-panel p-4 p-md-5 mb-4">
+                    <h3 class="fw-bold text-white mb-3">🛡️ Error Codes &amp; Troubleshooting</h3>
+                    <p class="text-white-50 small mb-4">Nexus uses standard HTTP response status codes to communicate status outcomes.</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover align-middle mb-0" style="background: transparent;">
+                            <thead>
+                                <tr class="text-white-50 small border-secondary">
+                                    <th>HTTP Status</th>
+                                    <th>Error Type</th>
+                                    <th>Meaning &amp; Resolution</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="badge bg-success">200 OK</span></td>
+                                    <td class="text-white">Success</td>
+                                    <td class="text-white-50 small">Request processed and streaming payload returned.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge bg-warning text-dark">401 Unauthorized</span></td>
+                                    <td class="text-white">Invalid API Key</td>
+                                    <td class="text-white-50 small">Check Bearer token in the <code>Authorization</code> header.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge bg-danger">429 Rate Limit</span></td>
+                                    <td class="text-white">Quota Exceeded</td>
+                                    <td class="text-white-50 small">Rate limit hit. Implement exponential backoff retry.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge bg-secondary">500 Server Error</span></td>
+                                    <td class="text-white">Internal Exception</td>
+                                    <td class="text-white-50 small">Something went wrong on our GPU cluster. Automatic failover will re-route.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 border-top border-secondary border-opacity-25" style="background: #04060a;">
+        <div class="container text-center">
+            <h5 class="text-white fw-bold mb-1">NEXUS AI PLATFORM</h5>
+            <div class="small text-secondary mb-3">Built for high-scale enterprise applications and real-time neural inference.</div>
+            <div class="small text-secondary">© 2026 <strong>NexusAI</strong>. Developed by <strong><a href="https://github.com/Manish-Kumar-Gupta96" class="text-info text-decoration-none">Manish Kumar Gupta</a></strong>.</div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const sendBtn = document.getElementById('sendSandboxBtn');
+        const output = document.getElementById('sandboxOutput');
+        const status = document.getElementById('sandboxStatus');
+
+        sendBtn.addEventListener('click', () => {
+            sendBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-2"></i> Requesting...';
+            output.textContent = 'Connecting to edge gateway...\nStreaming neural tokens...';
+            status.textContent = 'Streaming...';
+            status.className = 'badge bg-warning text-dark';
+
+            setTimeout(() => {
+                output.textContent = JSON.stringify({
+                    id: "chatcmpl_" + Math.random().toString(36).substring(7),
+                    object: "chat.completion",
+                    created: Math.floor(Date.now() / 1000),
+                    model: "nexus-4-turbo",
+                    choices: [{
+                        message: {
+                            role: "assistant",
+                            content: "// High-performance Rust async worker\nuse tokio::time::{sleep, Duration};\n\n#[tokio::main]\nasync fn main() {\n    println!(\"Nexus Worker v4 initialized successfully!\");\n    sleep(Duration::from_millis(15)).await;\n}"
+                        },
+                        finish_reason: "stop"
+                    }],
+                    usage: {
+                        prompt_tokens: 32,
+                        completion_tokens: 48,
+                        total_tokens: 80,
+                        latency_ms: 24.8
+                    }
+                }, null, 2);
+
+                status.textContent = '200 OK (24.8ms)';
+                status.className = 'badge bg-success bg-opacity-25 text-success';
+                sendBtn.innerHTML = '<i class="fa-solid fa-play me-2"></i> Send Test Request';
+            }, 600);
+        });
+    </script>
+</body>
+</html>
